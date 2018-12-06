@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.gdn.geneva.event.data.pump:event-data-pump-java-sdk:1.11.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gdn/geneva/event/data/pump/event-data-pump-java-sdk/1.11.0/event-data-pump-java-sdk-1.11.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gdn/geneva/event/data/pump/event-data-pump-java-sdk/1.11.0/event-data-pump-java-sdk-1.11.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gdn/geneva/event/data/pump/event-data-pump-java-sdk/1.11.0/event-data-pump-java-sdk-1.11.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
