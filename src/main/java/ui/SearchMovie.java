@@ -1,19 +1,24 @@
 package ui;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class SearchMovie
-
 {
     CsvFileHandler csvFileHandler=new CsvFileHandler();
     TestData testData = new TestData();
     PageHandler pageHandler = new PageHandler();
+    public static WebDriver driver ;
 
     public Map<List<String>, List<String>> movieWithId = new HashMap<List<String>, List<String>>();
     private List<String> id;
@@ -49,24 +54,32 @@ public class SearchMovie
     {
        if (browser.contains("fireFox"))
        {
-           WebDriver driver = new FirefoxDriver();
-           driver.get("https://www.google.co.in");
+           driver=new FirefoxDriver();
        }
        else if(browser.contains("chrome"))
        {
-           WebDriver driver = new ChromeDriver();
-           driver.navigate().to("https://www.google.co.in");
-           driver.quit();
+           driver=new ChromeDriver();
        }
        else if(browser.contains("safari"))
        {
-           WebDriver driver = new SafariDriver();
+           driver=new SafariDriver();
        }
     }
 
     public void runTest()
     {
-        pageHandler.getDriver().navigate().to("https://www.google.co.in");
-        pageHandler.getDriver().quit();
+        driver.navigate().to("https://www.google.co.in");
+        driver.quit();
+    }
+
+    public void provideImplicitWait()
+    {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
+    public void provideExplicitWait(WebElement element)
+    {
+        WebDriverWait wait = new WebDriverWait(driver,20);
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 }
