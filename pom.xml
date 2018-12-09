@@ -7,6 +7,18 @@
     <groupId>seleniumlearning</groupId>
     <artifactId>selenium</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
     <dependency>
@@ -30,11 +42,11 @@
         <artifactId>selenium-firefox-driver</artifactId>
         <version>3.141.59</version>
     </dependency>
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-ie-driver</artifactId>
-        <version>3.141.59</version>
-    </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-safari-driver</artifactId>
+            <version>3.141.59</version>
+        </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -72,7 +84,11 @@
         <artifactId>jaxb-api</artifactId>
         <version>2.3.0</version>
     </dependency>
-
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>3.8</version>
+        </dependency>
     </dependencies>
 
 
