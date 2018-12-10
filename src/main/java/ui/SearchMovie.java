@@ -1,11 +1,11 @@
 package ui;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,7 +17,6 @@ public class SearchMovie
 {
     CsvFileHandler csvFileHandler=new CsvFileHandler();
     TestData testData = new TestData();
-    PageHandler pageHandler = new PageHandler();
     public static WebDriver driver ;
 
     public Map<List<String>, List<String>> movieWithId = new HashMap<List<String>, List<String>>();
@@ -82,4 +81,17 @@ public class SearchMovie
         WebDriverWait wait = new WebDriverWait(driver,20);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
+
+
+    public JavascriptExecutor getJsExecuter() {
+        return (JavascriptExecutor)  driver;
+    }
+
+
+    public void jsClickBtn(WebElement button) {
+        getJsExecuter().executeScript("arguments[0].click();", button);
+    }
+
+
+
 }
